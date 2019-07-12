@@ -35,6 +35,8 @@ make.template.package <- function(set.my.name,set.package.name) {
                                    sep = "")
   usethis::use_directory(relative.path.name, ignore = TRUE)
   usethis::use_git_ignore(relative.path.name)
+  # Update description. You can set defaults
+  usethis::use_description()
 
   # Add a licence
   usethis::use_mit_license(set.my.name)

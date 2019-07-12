@@ -1,0 +1,16 @@
+Package: utils.template.package.creator
+Title: Creates Template For Resusable Template
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Paul",
+           family = "Palmer",
+           role = c("aut", "cre"),
+           email = "p.j.palmer@lboro.ac.uk")
+Description: Makes a template package in a target directory.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    devtools,
+    usethis
+RoxygenNote: 6.1.1

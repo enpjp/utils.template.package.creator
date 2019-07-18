@@ -9,7 +9,7 @@ make.template.package(set.my.name, set.package.name)
 \arguments{
 \item{set.my.name}{string with user name}
 
-\item{set.package.name}{string with user name}
+\item{set.package.name}{string with package name}
 }
 \value{
 make.template.package

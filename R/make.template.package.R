@@ -1,7 +1,7 @@
 #' Make Template Package
 #'
 #' @param set.my.name  string with user name
-#' @param set.package.name  string with user name
+#' @param set.package.name  string with package name
 #'
 #' @return make.template.package
 #' @export make.template.package

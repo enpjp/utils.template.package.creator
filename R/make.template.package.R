@@ -20,6 +20,9 @@ make.template.package <- function(set.my.name,set.package.name) {
   usethis::create_package(nice.name, open = FALSE)
 
   usethis::proj_set(fs::path(getwd(),nice.name))
+  usethis::use_mit_license(set.my.name)
+  usethis::use_roxygen_md()
+
   # Create a first markdown template with the package name
   #usethis::use_rmarkdown_template(template_name = nice.name)
   # We will use this package template to create the skeleton.

@@ -15,6 +15,7 @@ post.package <- function() {
   usethis::use_roxygen_md()
   devtools::document()
   usethis::use_pipe()
+  devtools::document()
 
  # To help with the workflow we need a sub directory in inst as a working space.
  # This is the <package name>.inst.dev and needs to be added to .git ignore and

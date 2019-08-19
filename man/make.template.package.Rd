@@ -15,5 +15,7 @@ make.template.package(set.my.name, set.package.name)
 make.template.package
 }
 \description{
-Make Template Package
+This function does all the hard work when setting up a new template package.
+It creates a new RStudio template that may be used as a basis for a reproducible
+and reusable analysis.
 }

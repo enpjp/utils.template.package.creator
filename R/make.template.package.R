@@ -1,10 +1,15 @@
-#' Make Template Package
+#'Make Template Package
 #'
-#' @param set.my.name  string with user name
-#' @param set.package.name  string with package name
+#'This function does all the hard work when setting up a new template package.
+#'It creates a new RStudio template that may be used as a basis for a reproducible
+#'and reusable analysis.
 #'
-#' @return make.template.package
-#' @export make.template.package
+#'
+#'@param set.my.name  string with user name
+#'@param set.package.name  string with package name
+#'
+#'@return make.template.package
+#'@export make.template.package
 #'
 
 make.template.package <- function(set.my.name,set.package.name) {
@@ -13,6 +18,8 @@ make.template.package <- function(set.my.name,set.package.name) {
   nice.name <- make.names(set.package.name)
   # Create the new package
   usethis::create_package(nice.name, open = FALSE)
+
+  usethis::proj_set(fs::path(getwd(),nice.name))
   # Create a first markdown template with the package name
   #usethis::use_rmarkdown_template(template_name = nice.name)
   # We will use this package template to create the skeleton.
@@ -88,24 +95,20 @@ usethis::with_project( my.working.project,
   relative.path.name <-  fs::path("inst",
                                "extdata")
 
-  usethis::use_directory(relative.path.name, ignore = FALSE)
-  # Make the package into a git repository
-  usethis::use_git(message = "Initial commit")
+
  # To help with the workflow we need a sub directory in inst as a working space.
  # This is the <package name>.inst.dev and needs to be added to .git ignore and
  # .buildignore. The syntax is fussy so best to use these functions.
-  relative.path.name <-  fs::path("inst",
-                               nice.name,
-                                   ".inst.dev")
-  usethis::use_directory(relative.path.name, ignore = TRUE)
-  usethis::use_git_ignore(relative.path.name)
-  # Update description. You can set defaults
-  usethis::use_description()
+#   usethis::with_project( my.working.project,
+# usethis::use_package("roxygen2") )
 
-  # Add a licence
-  usethis::use_mit_license(set.my.name)
-
-
+  # Now add a few useful packages for the template
+  #  usethis::with_project( my.working.project,
+  # devtools::check(),
+  # devtools::document(),
+  #  usethis::use_pipe()
+  # #
+  #  ) ## end with project
 
  # usethis::use_package("devtools")
  # usethis::use_package("usethis")

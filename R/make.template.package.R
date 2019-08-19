@@ -18,11 +18,12 @@ make.template.package <- function(set.my.name,set.package.name) {
   # We will use this package template to create the skeleton.
   # This will have to be done in several stages
   # First create the .yml file in the correct place
-  relative.path.name <-  fs::path("inst",
+  template.name <- paste("template-",nice.name, sep="")
+  template.path.name  <-  fs::path(nice.name,"inst",
                                "rmarkdown",
-                               nice.name
+                               template.name
                                )
-  dir.create(file.path("inst", "rmarkdown",nice.name ))
+  fs::dir_create(template.path.name)
   template_source <- fs::path_package(package = this.package.name,"inst",
                                       "templates","rmarkdown-template.yml")
 

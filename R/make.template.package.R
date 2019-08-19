@@ -23,7 +23,8 @@ make.template.package <- function(set.my.name,set.package.name) {
   my.working.project <- fs::path(getwd(),nice.name)
   usethis::proj_set( my.working.project)
   usethis::use_mit_license(set.my.name)
-  usethis::use_roxygen_md()
+ # usethis::use_roxygen_md()
+
 
   # Create a first markdown template with the package name
   #usethis::use_rmarkdown_template(template_name = nice.name)
@@ -102,6 +103,14 @@ usethis::with_project( my.working.project,
   relative.path.name <-  fs::path(nice.name,"inst",
                                "extdata")
   fs::dir_create(relative.path.name)
+
+  # Add inst dev path
+  dev.name <- paste(nice.name, ".inst.dev", sep = "")
+  relative.path.name <-  fs::path(nice.name,"inst",
+                                  "dev", dev.name)
+  fs::dir_create(relative.path.name)
+
+  usethis::use_build_ignore(fs::path("inst", "dev", dev.name))
 
  # To help with the workflow we need a sub directory in inst as a working space.
  # This is the <package name>.inst.dev and needs to be added to .git ignore and

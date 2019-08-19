@@ -8,6 +8,7 @@
 #'
 
 make.template.package <- function(set.my.name,set.package.name) {
+  this.package.name <- c("utils.template.package.creator")
  #options(full_name = set.my.name)
   nice.name <- make.names(set.package.name)
   # Create the new package
@@ -21,8 +22,32 @@ make.template.package <- function(set.my.name,set.package.name) {
                                .Platform$file.sep,
                                "templates",
                                .Platform$file.sep,
-                               nice.name
+                               nice.name,
+                               sep =""
                                )
+  template_source <- fs::path_package(package = this.package.name,
+                                      "templates", markdown-template.yml)
+  usethis::use_template(template_source,
+                    save_as = paste(relative.path.name,
+                                    Platform$file.sep,
+                                    skeleton.yml,
+                                    data = c("template_name = nice.name"),
+                                    package = this.package.name
+                                    )
+                     )
+
+  # Now add the Rmarkdown template
+  template_source <- fs::path_package(package = this.package.name,
+                                      "templates", markdown-template.Rmd)
+
+  usethis::use_template(template_source,
+                        save_as = paste(relative.path.name,
+                                        Platform$file.sep,
+                                        skeleton.Rmd,
+                                        package = this.package.name
+                        )
+  )
+
 
 
   # Add data-raw

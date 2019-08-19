@@ -13,7 +13,18 @@ make.template.package <- function(set.my.name,set.package.name) {
   # Create the new package
   usethis::create_package(nice.name, open = FALSE)
   # Create a first markdown template with the package name
-  usethis::use_rmarkdown_template(template_name = nice.name)
+  #usethis::use_rmarkdown_template(template_name = nice.name)
+  # We will use this package template to create the skeleton.
+  # This will have to be done in several stages
+  # First create the .yml file in the correct place
+  relative.path.name <-  paste("inst",
+                               .Platform$file.sep,
+                               "templates",
+                               .Platform$file.sep,
+                               nice.name
+                               )
+
+
   # Add data-raw
   usethis::use_data_raw
   # Add inst/extdata

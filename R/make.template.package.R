@@ -50,16 +50,37 @@ usethis::with_project( my.working.project,
 
 
   # Now add the Rmarkdown template
- # template_source <- fs::path_package(package = this.package.name,"inst",
-  #                                    "templates","rmarkdown-template.Rmd")
 
+# skeleton path name
+markdown.path.name  <-  fs::path(nice.name,"inst",
+                                 "rmarkdown",
+                                 "templates",
+                                 template.name,
+                                 "skeleton"
+
+)
+
+# Create the path
+fs::dir_create(markdown.path.name)
+# Update the path name
+
+markdown.path.name  <-  fs::path("inst",
+                                 "rmarkdown",
+                                 "templates",
+                                 template.name,
+                                 "skeleton"
+
+)
+
+# Now create the skeleton file
+usethis::with_project( my.working.project,
   usethis::use_template("rmarkdown-template.Rmd",
-                        save_as = fs::path(relative.path.name,
+                        save_as = fs::path(markdown.path.name,
                                         "skeleton", ext = "Rmd"),
                                         package = this.package.name
                       )
-
-
+# End use with project
+)
 
   # Add data-raw
   usethis::use_data_raw

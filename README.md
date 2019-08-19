@@ -12,6 +12,15 @@ Many files are presented in a human readable **wide-format**, often as spreadshe
 
 https://github.com/enpjp/utils.template.package.creator 
 
+### Before you start
+
+This package is currently designed to work with RStudio which can be downloaded from:
+https://www.rstudio.com/products/rstudio/download/
+
+If you have not updated R in a while update all your installed packages. This may take a while so get it to update all.
+
+     update.packages(ask = FALSE)
+
 ## Commands
 
 

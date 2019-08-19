@@ -95,9 +95,6 @@ usethis::with_project( my.working.project,
 # End use with project
 )
 
-  # Add data-raw
-usethis::with_project( my.working.project,
-  usethis::use_data_raw )
 
   # Add inst/extdata
   relative.path.name <-  fs::path(nice.name,"inst",
@@ -111,6 +108,7 @@ usethis::with_project( my.working.project,
   fs::dir_create(relative.path.name)
 
   usethis::use_build_ignore(fs::path("inst", "dev", dev.name))
+  usethis::use_git_ignore(fs::path("inst", "dev", dev.name))
 
  # To help with the workflow we need a sub directory in inst as a working space.
  # This is the <package name>.inst.dev and needs to be added to .git ignore and

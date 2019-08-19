@@ -19,7 +19,9 @@ make.template.package <- function(set.my.name,set.package.name) {
   # Create the new package
   usethis::create_package(nice.name, open = FALSE)
 
-  usethis::proj_set(fs::path(getwd(),nice.name))
+
+  my.working.project <- fs::path(getwd(),nice.name)
+  usethis::proj_set( my.working.project)
   usethis::use_mit_license(set.my.name)
   usethis::use_roxygen_md()
 
@@ -46,7 +48,7 @@ make.template.package <- function(set.my.name,set.package.name) {
                                    template.name
   )
 
-my.working.project <- fs::path(getwd(),nice.name)
+
 usethis::with_project( my.working.project,
   usethis::use_template("rmarkdown-template.yml",
                     save_as = fs::path(skeleton.path.name,
@@ -93,25 +95,17 @@ usethis::with_project( my.working.project,
 )
 
   # Add data-raw
-  usethis::use_data_raw
-  # Add inst/extdata
-  relative.path.name <-  fs::path("inst",
-                               "extdata")
+usethis::with_project( my.working.project,
+  usethis::use_data_raw )
 
+  # Add inst/extdata
+  relative.path.name <-  fs::path(nice.name,"inst",
+                               "extdata")
+  fs::dir_create(relative.path.name)
 
  # To help with the workflow we need a sub directory in inst as a working space.
  # This is the <package name>.inst.dev and needs to be added to .git ignore and
  # .buildignore. The syntax is fussy so best to use these functions.
-#   usethis::with_project( my.working.project,
-# usethis::use_package("roxygen2") )
-
-  # Now add a few useful packages for the template
-  #  usethis::with_project( my.working.project,
-  # devtools::check(),
-  # devtools::document(),
-  #  usethis::use_pipe()
-  # #
-  #  ) ## end with project
 
  # usethis::use_package("devtools")
  # usethis::use_package("usethis")

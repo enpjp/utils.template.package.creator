@@ -22,8 +22,10 @@ make.template.package <- function(set.my.name,set.package.name) {
                                "templates",
                                nice.name
                                )
-  template_source <- fs::path_package(package = this.package.name,
-                                      "templates", "markdown-template.yml")
+  template_source <- fs::path_package(package = this.package.name,"inst",
+                                      "templates","rmarkdown-template.yml")
+
+
   usethis::use_template(template_source,
                     save_as = fs::path(relative.path.name,
                                     "skeleton", ext= "yml"),
@@ -32,8 +34,8 @@ make.template.package <- function(set.my.name,set.package.name) {
                                     )
 
   # Now add the Rmarkdown template
-  template_source <- fs::path_package(package = this.package.name,
-                                      "templates", "markdown-template.Rmd")
+  template_source <- fs::path_package(package = this.package.name,"inst",
+                                      "templates","rmarkdown-template.Rmd")
 
   usethis::use_template(template_source,
                         save_as = fs::path(relative.path.name,

@@ -24,19 +24,27 @@ make.template.package <- function(set.my.name,set.package.name) {
                                template.name
                                )
   fs::dir_create(template.path.name)
+  # update template name
+
   template_source <- fs::path_package(package = this.package.name,"inst",
                                       "templates","rmarkdown-template.yml")
+  # skeleton path name
+ skeleton.path.name  <-  fs::path("inst",
+                                   "rmarkdown",
+                                   template.name
+  )
 
-
+my.working.project <- fs::path(getwd(),nice.name)
+usethis::with_project( my.working.project,
   usethis::use_template("rmarkdown-template.yml",
-                    save_as = fs::path(relative.path.name,
+                    save_as = fs::path(skeleton.path.name,
                                     "skeleton", ext= "yml"),
                               data = list(template_name = nice.name,
                               template_description = "Edit this description",
                               template_create_dir = FALSE),
                                     package = this.package.name
                                     )
-
+)
   # Now add the Rmarkdown template
  # template_source <- fs::path_package(package = this.package.name,"inst",
   #                                    "templates","rmarkdown-template.Rmd")

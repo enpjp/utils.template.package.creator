@@ -12,5 +12,6 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     devtools,
-    usethis
+    usethis,
+    fs
 RoxygenNote: 6.1.1

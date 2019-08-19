@@ -18,45 +18,36 @@ make.template.package <- function(set.my.name,set.package.name) {
   # We will use this package template to create the skeleton.
   # This will have to be done in several stages
   # First create the .yml file in the correct place
-  relative.path.name <-  paste("inst",
-                               .Platform$file.sep,
+  relative.path.name <-  fs::path("inst",
                                "templates",
-                               .Platform$file.sep,
-                               nice.name,
-                               sep =""
+                               nice.name
                                )
   template_source <- fs::path_package(package = this.package.name,
-                                      "templates", markdown-template.yml)
+                                      "templates", "markdown-template.yml")
   usethis::use_template(template_source,
-                    save_as = paste(relative.path.name,
-                                    Platform$file.sep,
-                                    skeleton.yml,
+                    save_as = fs::path(relative.path.name,
+                                    "skeleton", ext= "yml"),
                                     data = c("template_name = nice.name"),
                                     package = this.package.name
                                     )
-                     )
 
   # Now add the Rmarkdown template
   template_source <- fs::path_package(package = this.package.name,
-                                      "templates", markdown-template.Rmd)
+                                      "templates", "markdown-template.Rmd")
 
   usethis::use_template(template_source,
-                        save_as = paste(relative.path.name,
-                                        Platform$file.sep,
-                                        skeleton.Rmd,
+                        save_as = fs::path(relative.path.name,
+                                        "skeleton", ext = "Rmd"),
                                         package = this.package.name
-                        )
-  )
+                      )
 
 
 
   # Add data-raw
   usethis::use_data_raw
   # Add inst/extdata
-  relative.path.name <-  paste("inst",
-                               .Platform$file.sep,
-                               "extdata",
-                               sep = "")
+  relative.path.name <-  fs::path("inst",
+                               "extdata")
 
   usethis::use_directory(relative.path.name, ignore = FALSE)
   # Make the package into a git repository
@@ -64,11 +55,9 @@ make.template.package <- function(set.my.name,set.package.name) {
  # To help with the workflow we need a sub directory in inst as a working space.
  # This is the <package name>.inst.dev and needs to be added to .git ignore and
  # .buildignore. The syntax is fussy so best to use these functions.
-  relative.path.name <-  paste("inst",
-                               .Platform$file.sep,
+  relative.path.name <-  fs::path("inst",
                                nice.name,
-                                   ".inst.dev",
-                                   sep = "")
+                                   ".inst.dev")
   usethis::use_directory(relative.path.name, ignore = TRUE)
   usethis::use_git_ignore(relative.path.name)
   # Update description. You can set defaults

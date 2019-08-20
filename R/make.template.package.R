@@ -56,7 +56,7 @@ usethis::with_project( my.working.project,
                                     "template", ext= "yml"),
                               data = list(template_name = nice.name,
                               template_description = "Edit this description",
-                              template_create_dir = FALSE),
+                              template_create_dir = TRUE),
                                     package = this.package.name
                                     )
 )
@@ -81,7 +81,8 @@ markdown.path.name  <-  fs::path("inst",
                                  "rmarkdown",
                                  "templates",
                                  template.name,
-                                 "skeleton"
+                                 "skeleton",
+                                 "data-raw"
 
 )
 

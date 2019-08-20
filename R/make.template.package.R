@@ -53,7 +53,7 @@ make.template.package <- function(set.my.name,set.package.name) {
 usethis::with_project( my.working.project,
   usethis::use_template("rmarkdown-template.yml",
                     save_as = fs::path(skeleton.path.name,
-                                    "skeleton", ext= "yml"),
+                                    "template", ext= "yml"),
                               data = list(template_name = nice.name,
                               template_description = "Edit this description",
                               template_create_dir = FALSE),

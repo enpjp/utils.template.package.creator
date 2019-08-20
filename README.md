@@ -52,7 +52,7 @@ If all has gone to plan there will be no errors and you may check the package wi
     check()
     document()
     
-The first template will be visible in the new file from template menu.
+The first template will be visible in the new file from template menu. (You may have to restart your RStudio session for it to appear in the menu).
 
 file >> new file >> R markdown.. >> From Template
     

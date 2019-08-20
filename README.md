@@ -1,6 +1,10 @@
 # utils.template.package.creator
 Makes template frameworks
 
+<!-- badges: start -->
+  [![Travis build status](https://travis-ci.org/enpjp/utils.template.package.creator.svg?branch=master)](https://travis-ci.org/enpjp/utils.template.package.creator)
+  <!-- badges: end -->
+
 ## Background
 This package supplies R commands to simplify the creation of R Studio templates that follow the principles originally developed by Paul Palmer. The basic idea is to extend the requirements of reproducible analysis into **reusable** templates that embody tools that will work for data from different sources. The practical realisation supplies skeleton templates that will load data from multiple files supplied in a **data-raw** directory.
 

@@ -21,7 +21,36 @@ If you have not updated R in a while update all your installed packages. This ma
 
      update.packages(ask = FALSE)
 
-## Commands
+## Creating your template package
 
+You will need to install and load devtools to work on your package. Using the console in RStudio enter the following commands:
 
+     install.packages("devtools", "roxygen2")
+     library(devtools)
 
+And finally this package:
+
+     install_github("enpjp/utils.template.package.creator")
+
+We are now ready to create the basic package. First use the RStudio session menu to switch to the directory where you would like to create the package. The enter the following command:
+
+    library(utils.template.package.creator)
+    make.template.package("Your name", "New package name")
+
+You may now load the new package using the RStudio Open project menu. Reload devtools and roxygen2:
+
+    library(devtools)
+    library(roxygen2)
+    library(utils.template.package.creator)
+
+And run the post package set up command in the consule window
+
+    post.package()
+    
+If all has gone to plan there will be no errors and you may check the package with:
+
+    check()
+    document()
+    
+The first template will be visible in the new file from template menu.
+    

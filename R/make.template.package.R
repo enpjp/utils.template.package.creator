@@ -40,8 +40,11 @@ make.template.package <- function(set.my.name,set.package.name) {
   fs::dir_create(template.path.name)
   # update template name
 
-  template_source <- fs::path_package(package = this.package.name,"inst",
-                                      "templates","rmarkdown-template.yml")
+  #template_source <- fs::path_package(package = this.package.name,"inst",
+  #                                    "templates","rmarkdown-template.yml")
+  # There is a difference when working with installed and development packages.
+  # The inst directory is effectively removed.
+ # template_source <- system.file("templates", "rmarkdown-template.yml", package=this.package.name)
   # skeleton path name
  skeleton.path.name  <-  fs::path("inst",
                                    "rmarkdown",
@@ -81,8 +84,7 @@ markdown.path.name  <-  fs::path("inst",
                                  "rmarkdown",
                                  "templates",
                                  template.name,
-                                 "skeleton",
-                                 "data-raw"
+                                 "skeleton"
 
 )
 

@@ -53,5 +53,6 @@ If all has gone to plan there will be no errors and you may check the package wi
     document()
     
 The first template will be visible in the new file from template menu.
+
 file >> new file >> R markdown.. >> From Template
     

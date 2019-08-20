@@ -8,7 +8,7 @@ Many files are presented in a human readable **wide-format**, often as spreadshe
 
 ## Loading this package
 
-'utils.template.package.creator' is available from Github at:
+'utils.template.package.creator' is available from Git-hub at:
 
 https://github.com/enpjp/utils.template.package.creator 
 
@@ -32,18 +32,18 @@ And finally this package:
 
      install_github("enpjp/utils.template.package.creator")
 
-We are now ready to create the basic package. First use the RStudio session menu to switch to the directory where you would like to create the package. The enter the following command:
+We are now ready to create your package. First, use the R Studio session menu to switch to the directory where you would like to create the package. The enter the following command:
 
     library(utils.template.package.creator)
     make.template.package("Your name", "New package name")
 
-You may now load the new package using the RStudio Open project menu. Reload devtools and roxygen2:
+You may now load the new package using the R Studio Open project menu. Reload devtools and roxygen2:
 
     library(devtools)
     library(roxygen2)
     library(utils.template.package.creator)
 
-And run the post package set up command in the consule window
+And run the post package set up command in the console window
 
     post.package()
     

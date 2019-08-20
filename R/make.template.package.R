@@ -59,7 +59,7 @@ usethis::with_project( my.working.project,
                                     "template", ext= "yml"),
                               data = list(template_name = nice.name,
                               template_description = "Edit this description",
-                              template_create_dir = TRUE),
+                              template_create_dir = FALSE),
                                     package = this.package.name
                                     )
 )

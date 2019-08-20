@@ -1,6 +1,6 @@
 Package: utils.template.package.creator
 Title: Creates Template For Resusable Template
-Version: 0.0.0.9000
+Version: 0.0.1.0000
 Authors@R: 
     person(given = "Paul",
            family = "Palmer",

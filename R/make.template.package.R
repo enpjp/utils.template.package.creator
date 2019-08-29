@@ -109,7 +109,7 @@ usethis::with_project( my.working.project,
   relative.path.name <-  fs::path(nice.name,"inst",
                                   "dev", dev.name)
   fs::dir_create(relative.path.name)
-
+  usethis::use_git()
   usethis::use_build_ignore(fs::path("inst", "dev", dev.name))
   usethis::use_git_ignore(fs::path("inst", "dev", dev.name))
 

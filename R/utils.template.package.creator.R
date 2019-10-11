@@ -9,6 +9,10 @@
 #'\code{\link{post.package}}: is run from inside R Studio after the package has
 #'been loaded.
 #'
+#'Together these functions implement about twenty steps required to create a
+#'package that will pass the \code{devtools::check()} verification test first
+#'time.
+#'
 #'@section External Requirements: As a minimum, you will need R, RStudio, Pandoc
 #'  and Git correctly installed on your system. Extensive operating dependent
 #'  instructions are avaialble from \url{http://cran.r-project.org}. Please be

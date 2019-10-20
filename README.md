@@ -59,4 +59,11 @@ If all has gone to plan there will be no errors and you may check the package wi
 The first template will be visible in the new file from template menu. (You may have to restart your RStudio session for it to appear in the menu).
 
 file >> new file >> R markdown.. >> From Template
-    
+
+## Development Area
+
+Files under the heirarchy inst > dev > <packacke.name>.inst.dev are not included in builds and git. You can intiate a development git repository under this heireachy. This is not currently supported in the desktop version of git. However, if you nanigate to this location in the command line and use:
+
+    git init
+
+The repositiory can be added to the desktop version of git.

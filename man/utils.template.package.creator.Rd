@@ -3,7 +3,6 @@
 \docType{package}
 \name{utils.template.package.creator}
 \alias{utils.template.package.creator}
-\alias{utils.template.package.creator-package}
 \title{utils.template.package.creator: A package for creating template packages.}
 \description{
 This package provides two helper functions to create packages incorporating

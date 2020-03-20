@@ -31,6 +31,7 @@ You will need to install and load devtools to work on your package. Using the co
 
      install.packages("devtools", "roxygen2")
      library(devtools)
+     library(roxygen2)
 
 And finally this package:
 

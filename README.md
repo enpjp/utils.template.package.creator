@@ -63,7 +63,7 @@ file >> new file >> R markdown.. >> From Template
 
 ## Development Area
 
-Files under the heirarchy inst > dev > <packacke.name>.inst.dev are not included in builds and git. You can intiate a development git repository under this heireachy. This is not currently supported in the desktop version of git. However, if you nanigate to this location in the command line and use:
+Files under the hierarchy inst > dev > <package.name>.inst.dev are not included in builds and git. You can intiate a development git repository under this hierarchy reachy. This is not currently supported in the desktop version of git. However, if you navigate to this location in the command line and use:
 
     git init
 
